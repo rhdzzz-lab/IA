@@ -1,0 +1,13 @@
+label,text
+pedido,Quiero saber el estado de mi pedido.
+pago,Mi pago fue rechazado pero sí tengo saldo.
+facturación,Necesito mi factura a nombre de mi empresa.
+envío,El envío tarda más de lo prometido.
+devolución,Quiero devolver un producto que no me quedó.
+producto_dañado,El artículo llegó roto y con la caja abierta.
+pedido,Mi pedido aparece marcado como entregado y no lo he recibido.
+pago,Se duplicó el cobro al pagar con tarjeta.
+facturación,No me llegó la factura por correo.
+envío,¿Pueden cambiar la dirección de entrega?
+devolución,Solicito una devolución por talla incorrecta.
+producto_dañado,La pantalla llegó rayada y no funciona bien.
