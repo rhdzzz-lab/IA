@@ -4,3 +4,4 @@ scikit-learn
 datasets
 transformers
 accelerate
+torch
