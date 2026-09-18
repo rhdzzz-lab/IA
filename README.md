@@ -14,18 +14,50 @@ Este repositorio contiene una base de datos de ejemplo para resolver los ejercic
 - `datasets/08_compania_telefonica.csv`
 - `datasets/09_resenas_productos.csv`
 - `datasets/10_noticias.csv`
+- `scripts/build_jsonl.py`
+- `scripts/train_bert.py`
+- `requirements.txt`
 
-Cada archivo tiene dos columnas:
+Cada archivo CSV tiene dos columnas:
 
 - `label`: la clase o categoría
 - `text`: el mensaje a clasificar
 
-## Uso
+## Convertir a JSONL
 
-Puedes usar estos CSVs para:
-- entrenar un modelo de clasificación
-- convertirlos a JSONL para fine-tuning
-- probar un pipeline con BERT o con otro modelo de texto
+El script `scripts/build_jsonl.py` convierte todos los CSV dentro de `datasets/` a archivos JSONL dentro de `jsonl/`.
+
+```bash
+python scripts/build_jsonl.py
+```
+
+Cada salida tendrá el formato:
+
+```json
+{"label": "spam", "text": "..."}
+```
+
+## Entrenar BERT
+
+El script `scripts/train_bert.py` entrena un clasificador BERT con un archivo `.csv` o `.jsonl`.
+
+Instala dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+Ejemplo con uno de los JSONL generados:
+
+```bash
+python scripts/train_bert.py --data-file jsonl/01_correos_electronicos.jsonl --output-dir models/correos-bert
+```
+
+Ejemplo con CSV:
+
+```bash
+python scripts/train_bert.py --data-file datasets/02_banca.csv --output-dir models/banca-bert
+```
 
 ## Nota
 
