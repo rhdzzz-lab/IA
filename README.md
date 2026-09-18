@@ -1,6 +1,6 @@
 # IA - Ejercicios de Fine-Tuning
 
-Este repositorio contiene una base de datos de ejemplo para resolver los ejercicios del PDF **Ejercicios Fine-Tuning**.
+Este repositorio contiene datasets sintéticos para practicar clasificación de texto y fine-tuning con BERT.
 
 ## Estructura
 
@@ -16,49 +16,49 @@ Este repositorio contiene una base de datos de ejemplo para resolver los ejercic
 - `datasets/10_noticias.csv`
 - `scripts/build_jsonl.py`
 - `scripts/train_bert.py`
+- `scripts/evaluate.py`
+- `scripts/predict.py`
 - `requirements.txt`
 
-Cada archivo CSV tiene dos columnas:
+Cada CSV tiene dos columnas:
 
 - `label`: la clase o categoría
 - `text`: el mensaje a clasificar
 
-## Convertir a JSONL
-
-El script `scripts/build_jsonl.py` convierte todos los CSV dentro de `datasets/` a archivos JSONL dentro de `jsonl/`.
-
-```bash
-python scripts/build_jsonl.py
-```
-
-Cada salida tendrá el formato:
-
-```json
-{"label": "spam", "text": "..."}
-```
-
-## Entrenar BERT
-
-El script `scripts/train_bert.py` entrena un clasificador BERT con un archivo `.csv` o `.jsonl`.
-
-Instala dependencias:
+## Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Ejemplo con uno de los JSONL generados:
+## Convertir CSV a JSONL
+
+```bash
+python scripts/build_jsonl.py
+```
+
+Esto genera los archivos JSONL dentro de `jsonl/`.
+
+## Entrenar un modelo
 
 ```bash
 python scripts/train_bert.py --data-file jsonl/01_correos_electronicos.jsonl --output-dir models/correos-bert
 ```
 
-Ejemplo con CSV:
+El script ajusta automáticamente la configuración compatible con la versión instalada de `transformers`.
+
+## Evaluar el modelo
 
 ```bash
-python scripts/train_bert.py --data-file datasets/02_banca.csv --output-dir models/banca-bert
+python scripts/evaluate.py --model-dir models/correos-bert --data-file jsonl/01_correos_electronicos.jsonl
+```
+
+## Predecir un texto nuevo
+
+```bash
+python scripts/predict.py --model-dir models/correos-bert --text "Necesito saber por qué mi pago fue rechazado."
 ```
 
 ## Nota
 
-Los ejemplos fueron redactados como datos sintéticos de práctica, siguiendo las etiquetas mostradas en el PDF.
+Los ejemplos fueron redactados como datos sintéticos de práctica, siguiendo las etiquetas del PDF original.
