@@ -1,0 +1,13 @@
+label,text
+problema_técnico,La aplicación bancaria se cierra al abrir la sección de movimientos.
+problema_de_cuenta,No puedo entrar a mi cuenta porque dice usuario no encontrado.
+tarjeta,Necesito bloquear mi tarjeta porque la perdí.
+transferencia,Quiero hacer una transferencia a otra cuenta.
+fraude,Detecté un cargo que no reconozco en mi estado de cuenta.
+aclaración,¿Por qué me cobraron una comisión este mes?
+problema_técnico,El botón de confirmar pago no funciona en la app.
+problema_de_cuenta,Mi cuenta aparece suspendida y no sé por qué.
+tarjeta,Quiero aumentar el límite de mi tarjeta de crédito.
+transferencia,La transferencia quedó pendiente y no se reflejó.
+fraude,Recibí una notificación de compra que yo no hice.
+aclaración,¿Me pueden explicar el concepto del cobro duplicado?
